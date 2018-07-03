@@ -1,5 +1,2 @@
-
-FROM docker/whalesay:latest
-LABEL Name=docker Version=0.0.1
-RUN apt-get -y update && apt-get install -y fortunes
-CMD /usr/games/fortune -a | cowsay
+FROM nginx
+COPY src/. /usr/share/nginx/html
